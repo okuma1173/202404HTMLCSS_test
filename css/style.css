@@ -1,5 +1,14 @@
 @charset 'utf-8';
 
+/*
+汎用的なものは最初に書く
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+} 
+*/
+
 body {
   background-color: #f8f8f8;
 }
@@ -50,4 +59,110 @@ nav {
 .gnav-list li a::first-line {
   /* font-weight: 700; */
   font-weight: bold;
+}
+main {
+  padding: 2em 2em 0;
+}
+
+.about {
+  margin-bottom: 40px;
+}
+
+.about img {
+  float: left;
+  width: 300px;
+  margin: 0 1.5em 1.5em 0;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+ 
+.about p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.guide {
+  margin-bottom: 40px;
+}
+
+.guide-list {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+/* last child とは？las-of-typeでもok */
+.guide-list:last-child {
+  border-bottom: none;
+}
+
+.guide-list a {
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.guide-list a:hover {
+  opacity: 0.3;
+}
+
+.guide-icon {
+  flex-basis: 25%;
+  /* 親ボックスに対する幅　guide-icon */
+}
+
+.guide-icon img {
+  width: 100%;
+}
+
+.guide-text {
+  flex-basis: 70%;
+  /* 画像とテキストの間に5%の余白できる*/
+}
+
+.guide-text p {
+  margin: 0;
+}
+/* マージンの余白について。h3は最初から余白がある。
+pも余白持ってる。h3とpが相殺されてる。大きい方が飲み込んでる。
+but状況によっては相殺されない。※左右はされない */
+
+
+footer {
+  text-align: center;
+  padding: 1em 0;
+}
+
+footer small {
+  font-size: 0.75em;
+  color: #888;
+}
+
+@media screen and (max-width:700px) {
+  .container {
+    width: 340px;
+  }
+
+  h1 {
+    font-size: 1.1em;
+  }
+
+  .gnav-list li {
+    margin: 0;
+  }
+
+  .about img {
+    float: none;
+    width: 100%;
+  }
+
+  .guide-text h3 {
+    font-size: 1.1em;
+    margin: 0 0 0.5em;
+  }
 }
