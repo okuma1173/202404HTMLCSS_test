@@ -1,5 +1,11 @@
 @charset 'utf-8';
 
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
 body {
   background-color: #f8f8f8;
 }
@@ -50,4 +56,76 @@ nav {
 .gnav-list li a::first-line {
   /* font-weight: 700; */
   font-weight: bold;
+}
+
+main {
+  padding: 2em 2em 0;
+}
+
+.about {
+  margin-bottom: 40px;
+}
+
+.about img {
+  float: left;
+  width: 300px;
+  margin: 0 1.5em 1.5em 0;
+  /* margin-right: 1.5em;
+  margin-bottom: 1.5em; */
+}
+
+.about p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.guide {
+  margin-bottom: 40px;
+}
+
+.guide-list {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.guide-list:last-child {
+  border-bottom: none;
+}
+
+.guide-list a {
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.guide-list a:hover {
+  opacity: 0.7;
+}
+
+.guide-icon {
+  flex-basis: 25%;
+}
+
+.guide-icon img {
+  width: 100%;
+}
+
+.guide-text {
+  flex-basis: 70%;
+}
+
+.guide-text p {
+  margin: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 1em 0;
+}
+
+footer small {
+  font-size: 0.75em;
+  color: #888;
 }
